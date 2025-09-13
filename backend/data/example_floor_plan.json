@@ -1,0 +1,97 @@
+{
+    "floor_plan": {
+        "metadata": {
+            "building_id": "bldg_001",
+            "floor_id": "floor_01",
+            "processed_date": "2025-01-13",
+            "coordinate_system": {
+                "units": "meters",
+                "scale": "1:100"
+            }
+        },
+        "nodes": {
+            "rm_f01_101": {
+                "id": "rm_f01_101",
+                "type": "room",
+                "name": "Room 101",
+                "position": {"x": 5.0, "y": 10.0},
+                "connections": ["dr_f01_101a"]
+            },
+            "rm_f01_102": {
+                "id": "rm_f01_102",
+                "type": "room",
+                "name": "Conference Room A",
+                "position": {"x": 15.0, "y": 10.0},
+                "connections": ["dr_f01_102a", "dr_f01_102b"]
+            },
+            "cr_f01_main": {
+                "id": "cr_f01_main",
+                "type": "corridor",
+                "name": "Main Corridor",
+                "position": {"x": 15.0, "y": 5.0},
+                "connections": ["dr_f01_101a", "dr_f01_102a", "jn_f01_t01"]
+            },
+            "dr_f01_101a": {
+                "id": "dr_f01_101a",
+                "type": "door",
+                "position": {"x": 5.0, "y": 7.5},
+                "connects": ["rm_f01_101", "cr_f01_main"]
+            },
+            "dr_f01_102a": {
+                "id": "dr_f01_102a",
+                "type": "door",
+                "position": {"x": 15.0, "y": 7.5},
+                "connects": ["rm_f01_102", "cr_f01_main"]
+            },
+            "dr_f01_102b": {
+                "id": "dr_f01_102b",
+                "type": "door",
+                "position": {"x": 20.0, "y": 10.0},
+                "connects": ["rm_f01_102", "cr_f01_north"]
+            },
+            "jn_f01_t01": {
+                "id": "jn_f01_t01",
+                "type": "junction",
+                "name": "T-Junction 1",
+                "position": {"x": 15.0, "y": 15.0},
+                "connections": ["cr_f01_main", "cr_f01_north", "cr_f01_south"]
+            },
+            "st_f01_a": {
+                "id": "st_f01_a",
+                "type": "stairwell",
+                "name": "Stairwell A",
+                "position": {"x": 30.0, "y": 20.0},
+                "connections": ["cr_f01_north"],
+                "vertical_connections": ["st_f00_a", "st_f02_a"]
+            },
+            "el_f01_a": {
+                "id": "el_f01_a",
+                "type": "elevator",
+                "name": "Elevator A",
+                "position": {"x": 35.0, "y": 20.0},
+                "connections": ["cr_f01_north"],
+                "vertical_connections": ["el_b01_a", "el_f00_a", "el_f02_a", "el_f03_a"]
+            }
+        },
+        "edges": [
+            {
+                "id": "edge_001",
+                "from": "rm_f01_101",
+                "to": "dr_f01_101a",
+                "distance": 2.5
+            },
+            {
+                "id": "edge_002",
+                "from": "dr_f01_101a",
+                "to": "cr_f01_main",
+                "distance": 0
+            },
+            {
+                "id": "edge_003",
+                "from": "cr_f01_main",
+                "to": "jn_f01_t01",
+                "distance": 10.0
+            }
+        ]
+    }
+}

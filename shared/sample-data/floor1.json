@@ -1,0 +1,18 @@
+{
+  "floor_id": "building_a_floor_1",
+  "floor_number": 1,
+  "dimensions": {"width": 800, "height": 600},
+  "rooms": [
+    {"id": "101", "name": "Conference Room A", "center": {"x": 100, "y": 150}, "bounds": {"x": 50, "y": 100, "width": 100, "height": 100}},
+    {"id": "102", "name": "Office 102", "center": {"x": 250, "y": 150}, "bounds": {"x": 200, "y": 100, "width": 100, "height": 100}},
+    {"id": "103", "name": "Office 103", "center": {"x": 400, "y": 150}, "bounds": {"x": 350, "y": 100, "width": 100, "height": 100}},
+    {"id": "104", "name": "Meeting Room B", "center": {"x": 550, "y": 150}, "bounds": {"x": 500, "y": 100, "width": 100, "height": 100}},
+    {"id": "105", "name": "Cafeteria", "center": {"x": 700, "y": 150}, "bounds": {"x": 650, "y": 100, "width": 100, "height": 100}}
+  ],
+  "doors": [
+    {"id": "d1", "position": {"x": 150, "y": 150}, "connects": ["101", "102"]},
+    {"id": "d2", "position": {"x": 300, "y": 150}, "connects": ["102", "103"]},
+    {"id": "d3", "position": {"x": 450, "y": 150}, "connects": ["103", "104"]},
+    {"id": "d4", "position": {"x": 600, "y": 150}, "connects": ["104", "105"]}
+  ]
+}
